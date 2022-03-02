@@ -1,0 +1,30 @@
+
+#gamePageContainer {
+    width: 100%;
+    height: auto;
+    border: 2px solid orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#charactersContainer {
+    width: 100%;
+    height: 6rem;
+    text-align: center;
+    border: 2px solid red;
+}
+
+#gamePhotoContainer {
+    width: 98%;
+    height: auto;
+    border: 2px solid green;
+}
+
+#gamePhoto {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
