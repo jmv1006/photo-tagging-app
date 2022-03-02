@@ -1,7 +1,9 @@
+import './gamepage.css'
 
-const PopUp = () => {
+const PopUp = (props) => {
+    
     return(
-        <div>Pop Up!</div>
+        <div id='popUpBox' style={props.setStyle}>Pop Up!</div>
     )
 }
 
