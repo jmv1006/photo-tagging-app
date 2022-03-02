@@ -1,0 +1,11 @@
+#gamePhotoContainer {
+    width: 98%;
+    height: auto;
+    border: 2px solid green;
+}
+
+#gamePhoto {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}

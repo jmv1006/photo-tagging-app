@@ -12,6 +12,8 @@ import {
     updateDoc,
     doc,
     serverTimestamp,
+    getDoc,
+    getDocs
   } from 'firebase/firestore';
 
   
@@ -34,3 +36,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+async function getCharacters(db) {
+  const charactersCollection = collection(db, 'Characters Coordinates');
+  const test = await getDocs(charactersCollection);
+  const characterInfo = test.docs.map(thing => thing.data())
+  return characterInfo;
+}
+
+export { getCharacters, db };
