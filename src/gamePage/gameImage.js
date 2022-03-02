@@ -8,14 +8,15 @@ const GameImage = () => {
 
     const handleImageClick = (e) => {
         let offsetX = ((e.pageX / e.target.offsetWidth) * 100).toFixed(2);
-        let offsetY = ((e.pageY / e.target.offsetHeight) * 100).toFixed(2);
+        let offsetY = (((e.pageY - 232) / e.target.offsetHeight) * 100).toFixed(2);
+
 
         let targetXCoords = [80.45, 82.99]
-        let targetYCoords = [127.96, 132.47]
+        let targetYCoords = [77.55, 82.64]
     
         if((offsetX >= targetXCoords[0] && offsetX <= targetXCoords[1]) && (offsetY >= targetYCoords[0] && offsetY <= targetYCoords[1])) {
-            console.log('found')
-        }
+            alert('found')
+        };
     }
 
     return((

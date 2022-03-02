@@ -1,6 +1,7 @@
 import bb8 from './imgs/bb8.png';
 import boba from './imgs/boba.png';
 import han from './imgs/han.png';
+import chewy from './imgs/chewy.png';
 
 const charactersArray = [
     {
@@ -17,6 +18,11 @@ const charactersArray = [
         image: han,
         name: 'Han Solo',
         number: 2
+    },
+    {
+        image: chewy,
+        name: 'Chewbacca',
+        number: 3
     }
 ]
 
