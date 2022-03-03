@@ -1,0 +1,33 @@
+
+#startUpPageContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #F9DE4F;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+#title {
+    width: auto;
+    height: auto;
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.paragraph {
+    width: 75%;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+#startGameButton {
+    width: 30rem;
+    height: 3rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
