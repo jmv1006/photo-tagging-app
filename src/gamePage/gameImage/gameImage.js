@@ -25,7 +25,7 @@ const GameImage = (props) => {
 
             const editedArr = characters;
             editedArr.push(newCharacterObj);
-            setCharacters(editedArr)
+            setCharacters(editedArr);
         };
 
     }, []);
@@ -75,7 +75,7 @@ const GameImage = (props) => {
             setIsClicked(false);
         };
         
-    }
+    };
 
     return((
         <div id='gameContainer'>

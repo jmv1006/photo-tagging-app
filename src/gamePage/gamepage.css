@@ -2,7 +2,6 @@
 #gamePageContainer {
     width: 100%;
     height: auto;
-    border: 2px solid orange;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,10 +10,10 @@
 }
 
 #charactersContainer {
-    width: 100%;
+    width: 95%;
     height: 6rem;
     text-align: center;
-    border: 2px solid red;
+    border: 2px solid #6bfff5;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
