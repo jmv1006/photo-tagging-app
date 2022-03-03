@@ -1,4 +1,6 @@
+import { useEffect, useState } from 'react';
 import './gameimage.css'
+import charactersArray from '../characters';
 
 const PopUp = (props) => {
     
@@ -6,13 +8,16 @@ const PopUp = (props) => {
         props.onCharacterClick(character);
     }
 
+    const availableCharacters = props.characters.filter(character => character.isFound === false);
+
+    const characterOptionsToDisplay = availableCharacters.map((character) => 
+        <button key={character.name} onClick={() => sendChosenCharacter(character.name)}>{character.name}</button>
+    );
+
     return(
         <div id='popUpContainer' style={props.style}>
             <div id="characterChoiceButtonsContainer">
-                <button onClick={() => sendChosenCharacter('chewbacca')}>Chewy</button>
-                <button onClick={() => sendChosenCharacter('bb8')}>BB8</button>
-                <button onClick={() => sendChosenCharacter('boba')}>Boba</button>
-                <button onClick={() => sendChosenCharacter('han')}>Han</button>
+                {characterOptionsToDisplay}
             </div>
         </div>
     )

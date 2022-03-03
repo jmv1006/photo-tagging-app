@@ -9,8 +9,8 @@ const GameImage = (props) => {
     const [isClicked, setIsClicked] = useState(false);
     const [characters, setCharacters] = useState([]);
     const [popUpStyle, setPopUpStyle] = useState({});
-    const [xPos, setxPos] = useState('')
-    const [yPos, setyPos] = useState('')
+    const [xPos, setxPos] = useState('');
+    const [yPos, setyPos] = useState('');
 
     useEffect(() => {
         getCharacters(db).then((value) => processData(value));
@@ -22,7 +22,8 @@ const GameImage = (props) => {
         function doStuff(data) {
             let newCharacterObj = {
                 name: data.charactername,
-                coordinates: data.coordinates
+                coordinates: data.coordinates,
+                isFound: false
             };
 
             const editedArr = characters;
@@ -35,9 +36,10 @@ const GameImage = (props) => {
 
     const handleImageClick = (e) => {
         let offsetX = ((e.pageX / e.target.offsetWidth) * 100).toFixed(2);
-        //232 is the height of all elements above image. Can be changed later.
+        //324px is the height of all elements above image. Can be changed later.
         let offsetY = (((e.pageY - 324) / e.target.offsetHeight) * 100).toFixed(2);
         
+
         setPopUpStyle({
             position: 'absolute',
             left: `${e.clientX}px`,
@@ -73,6 +75,10 @@ const GameImage = (props) => {
         if((xToNumber >= xcoords.xcoord1 && xToNumber <= xcoords.xcoord2) && (yToNumber >= ycoords.ycoord1 && yToNumber <= ycoords.ycoord2)) {
             props.darkenCharacter(characterName);
             props.setFeedback(`You found ${characterName}!`);
+            
+            let tempArr = characters;
+            tempArr[characterIndex].isFound = true
+            setCharacters(tempArr);
             setIsClicked(false);
         } else {
             props.setFeedback('No one there!');
@@ -85,7 +91,7 @@ const GameImage = (props) => {
         <div id='gameContainer'>
             <div id='gamePhotoContainer'>  
                 <img src={gamePhoto} id='gamePhoto' onClick={handleImageClick}></img>
-                {isClicked ? <PopUp onCharacterClick={handleCharacterChoice} style={popUpStyle}/> : null}
+                {isClicked ? <PopUp onCharacterClick={handleCharacterChoice} style={popUpStyle} characters={characters} /> : null}
             </div>
         </div>
     ))

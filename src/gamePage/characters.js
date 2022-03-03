@@ -7,22 +7,26 @@ const charactersArray = [
     {
         image: bb8,
         name: 'bb8',
-        number: 0
+        number: 0,
+        found: false
     },
     {
         image: boba,
         name: 'boba',
-        number: 1
+        number: 1,
+        found: false
     },
     {
         image: han,
         name: 'han',
-        number: 2
+        number: 2,
+        found: false
     },
     {
         image: chewy,
         name: 'chewbacca',
-        number: 3
+        number: 3,
+        found: false
     }
 ]
 
