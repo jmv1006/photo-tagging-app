@@ -38,7 +38,7 @@ const GameImage = (props) => {
         let offsetX = ((e.pageX / e.target.offsetWidth) * 100).toFixed(2);
         //324px is the height of all elements above image. Can be changed later.
         let offsetY = (((e.pageY - 324) / e.target.offsetHeight) * 100).toFixed(2);
-        
+        console.log(offsetX, offsetY);
 
         setPopUpStyle({
             position: 'absolute',

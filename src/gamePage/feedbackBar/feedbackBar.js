@@ -1,6 +1,36 @@
+import { useEffect, useState } from 'react';
 import './feedback.css'
 
 const FeedbackBar = (props) => {
+
+    const [minutes, setMinutes] = useState(0);
+    const [seconds, setSeconds] = useState(0);
+    const [isActive, setIsActive] = useState(false);
+
+    useEffect(() => {
+        let interval = null;
+
+        if(isActive) {
+            interval = setInterval(() => {
+                setSeconds(seconds => seconds + 1);
+            }, 1000)
+    
+            
+            if(seconds != 0 && seconds % 60 == 0) {
+                setMinutes(minutes => minutes + 1);
+                setSeconds(seconds => 0)
+            };
+    
+            return () => clearInterval(interval);
+        } else {
+            //stop
+        }
+        
+    }, [seconds, isActive]);
+
+    const setActive = () => {
+        setIsActive(true);
+    };
 
     return(
         <div id="feedbackContainer">
@@ -8,8 +38,9 @@ const FeedbackBar = (props) => {
                 {props.feedback}
             </div>
             <div id='timer'>
-                0:00
+                {seconds < 10 ? `0${minutes}:0${seconds}` : `0${minutes}:${seconds}` } 
             </div>
+            <button onClick={setActive}>Start</button>
         </div>
     )
 }
