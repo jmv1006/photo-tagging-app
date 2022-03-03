@@ -1,4 +1,4 @@
-
+import './gameimage.css'
 
 const PopUp = (props) => {
     
@@ -8,7 +8,7 @@ const PopUp = (props) => {
 
     return(
         <div id='popUpContainer' style={props.style}>
-            <div>
+            <div id="characterChoiceButtonsContainer">
                 <button onClick={() => sendChosenCharacter('chewbacca')}>Chewy</button>
                 <button onClick={() => sendChosenCharacter('bb8')}>BB8</button>
                 <button onClick={() => sendChosenCharacter('boba')}>Boba</button>

@@ -36,8 +36,7 @@ const GameImage = (props) => {
     const handleImageClick = (e) => {
         let offsetX = ((e.pageX / e.target.offsetWidth) * 100).toFixed(2);
         //232 is the height of all elements above image. Can be changed later.
-        let offsetY = (((e.pageY - 231) / e.target.offsetHeight) * 100).toFixed(2);
-
+        let offsetY = (((e.pageY - 324) / e.target.offsetHeight) * 100).toFixed(2);
         
         setPopUpStyle({
             position: 'absolute',
@@ -50,9 +49,6 @@ const GameImage = (props) => {
         });
         setIsClicked(true);
         
-
-        //let chosenCharacter = prompt('Who?');
-        //checkIfCharacter(offsetX, offsetY, chosenCharacter);
         setxPos(offsetX);
         setyPos(offsetY);
 
@@ -75,11 +71,11 @@ const GameImage = (props) => {
         let ycoords = characters[characterIndex].coordinates[1];
 
         if((xToNumber >= xcoords.xcoord1 && xToNumber <= xcoords.xcoord2) && (yToNumber >= ycoords.ycoord1 && yToNumber <= ycoords.ycoord2)) {
-            alert(`Found ${characterName}!`)
             props.darkenCharacter(characterName);
+            props.setFeedback(`You found ${characterName}!`);
             setIsClicked(false);
         } else {
-            alert('Nope!');
+            props.setFeedback('No one there!');
             setIsClicked(false);
         };
         
@@ -90,7 +86,6 @@ const GameImage = (props) => {
             <div id='gamePhotoContainer'>  
                 <img src={gamePhoto} id='gamePhoto' onClick={handleImageClick}></img>
                 {isClicked ? <PopUp onCharacterClick={handleCharacterChoice} style={popUpStyle}/> : null}
-                {isClicked}
             </div>
         </div>
     ))

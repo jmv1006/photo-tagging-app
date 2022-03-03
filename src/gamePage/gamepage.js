@@ -2,9 +2,10 @@ import './gamepage.css'
 import charactersArray from './characters';
 import GameImage from './gameImage/gameImage';
 import { useEffect, useState } from 'react';
+import FeedbackBar from './feedbackBar/feedbackBar';
 
 const GamePage = () => {
-  
+    const [feedback, setFeedback] = useState('Choose Someone!')
 
     const characters = charactersArray.map((character) => 
         <div className='characterPhotoContainer' key={character.number}>
@@ -17,13 +18,18 @@ const GamePage = () => {
         chosenCharacter.style.filter = 'brightness(50%)';
     };
     
+    const changeFeedback = (feedback) => {
+        setFeedback(feedback)
+    };
+
     return(
         <div id='gamePageContainer'>
             Writing
             <div id='charactersContainer'>
                 {characters}
             </div>
-            <GameImage darkenCharacter={darkenCharacter}/>
+            <FeedbackBar feedback={feedback}/>
+            <GameImage setFeedback={changeFeedback} darkenCharacter={darkenCharacter}/>
         </div>
     )
 }
