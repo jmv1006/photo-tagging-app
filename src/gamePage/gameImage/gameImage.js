@@ -8,6 +8,7 @@ const GameImage = (props) => {
 
     const [isClicked, setIsClicked] = useState(false);
     const [characters, setCharacters] = useState([]);
+    const [popUpStyle, setPopUpStyle] = useState({});
 
     useEffect(() => {
         getCharacters(db).then((value) => processData(value));
@@ -35,11 +36,19 @@ const GameImage = (props) => {
         //232 is the height of all elements above image. Can be changed later.
         let offsetY = (((e.pageY - 232) / e.target.offsetHeight) * 100).toFixed(2);
 
-        let chosenCharacter = prompt('Who?');
+    
+        setPopUpStyle({
+            position: 'absolute',
+            left: `${e.clientX - 20}px`,
+            top: `${e.clientY - 10}px`,
+            color: 'red'
+        });
+        setIsClicked(true);
 
-        checkIfCharacter(offsetX, offsetY, chosenCharacter);
+        //let chosenCharacter = prompt('Who?');
+        //checkIfCharacter(offsetX, offsetY, chosenCharacter);
 
-        //setIsClicked(true);
+        //setIsClicked(false);
 
         const chewyCoords = [[80.45, 82.99], [77.55, 82.64]]
         const bb8Coords = [[36.87, 39.34], [80.08, 83.36]]
@@ -56,7 +65,7 @@ const GameImage = (props) => {
 
         if((xToNumber >= xcoords.xcoord1 && xToNumber <= xcoords.xcoord2) && (yToNumber >= ycoords.ycoord1 && yToNumber <= ycoords.ycoord2)) {
             alert(`Found ${characterName}!`)
-            props.addToScore();
+            props.darkenCharacter(characterName);
         } else {
             alert('Nope!')
         };
@@ -67,8 +76,8 @@ const GameImage = (props) => {
         <div>
             <div id='gamePhotoContainer'>  
                 <img src={gamePhoto} id='gamePhoto' onClick={handleImageClick}></img>
+                {isClicked ? <PopUp style={popUpStyle}/> : null}
             </div>
-            {isClicked ? <PopUp /> : null}
         </div>
     ))
 }

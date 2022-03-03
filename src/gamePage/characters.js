@@ -6,22 +6,22 @@ import chewy from './imgs/chewy.png';
 const charactersArray = [
     {
         image: bb8,
-        name: 'BB8',
+        name: 'bb8',
         number: 0
     },
     {
         image: boba,
-        name: 'Boba Fett',
+        name: 'boba',
         number: 1
     },
     {
         image: han,
-        name: 'Han Solo',
+        name: 'han',
         number: 2
     },
     {
         image: chewy,
-        name: 'Chewbacca',
+        name: 'chewbacca',
         number: 3
     }
 ]

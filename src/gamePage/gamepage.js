@@ -4,25 +4,26 @@ import GameImage from './gameImage/gameImage';
 import { useEffect, useState } from 'react';
 
 const GamePage = () => {
-    const[score, setScore] = useState(0)
+  
 
     const characters = charactersArray.map((character) => 
         <div className='characterPhotoContainer' key={character.number}>
-            <img src={character.image} className='characterPhoto'></img>
+            <img src={character.image} id={character.name} className='characterPhoto'></img>
         </div>
     );
 
-    const addScore = () => {
-        setScore(score + 1);
+    const darkenCharacter = (character) => {
+        const chosenCharacter = document.getElementById(`${character}`);
+        chosenCharacter.style.filter = 'brightness(50%)';
     };
     
     return(
         <div id='gamePageContainer'>
-            Score: {score}
+            Writing
             <div id='charactersContainer'>
                 {characters}
             </div>
-            <GameImage addToScore={addScore}/>
+            <GameImage darkenCharacter={darkenCharacter}/>
         </div>
     )
 }

@@ -3,7 +3,7 @@
 const PopUp = (props) => {
     
     return(
-        <div id='popUpBox'>Pop Up!</div>
+        <div id='popUpBox' style={props.style}>Pop Up!</div>
     )
 }
 
