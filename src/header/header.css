@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 #headerContainer {
     width: 100%;
     height: 5rem;
     background-color: aliceblue;
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
 }

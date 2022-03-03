@@ -4,7 +4,7 @@ const Header = () => {
 
     return(
         <div id='headerContainer'>
-            Header Here
+            STAR WARS
         </div>
     )
 }

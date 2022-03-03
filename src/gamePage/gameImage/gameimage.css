@@ -15,5 +15,5 @@
 #gamePhoto {
     max-width: 100%;
     height: auto;
-    cursor: pointer;
+    cursor: url('../imgs/cursor.png') 30 25, auto;
 }
