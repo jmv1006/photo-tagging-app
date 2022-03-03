@@ -41,7 +41,7 @@ const GameImage = (props) => {
         setPopUpStyle({
             position: 'absolute',
             left: `${e.clientX}px`,
-            top: `${e.clientY}px`,
+            top: `${e.pageY}px`,
             width: 'auto',
             height: 'auto',
             backgroundColor: 'white',
