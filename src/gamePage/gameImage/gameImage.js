@@ -15,7 +15,7 @@ const GameImage = (props) => {
 
         function processData(data) {
             data.map(doStuff)
-        }
+        };
 
         function doStuff(data) {
             let newCharacterObj = {
@@ -36,22 +36,25 @@ const GameImage = (props) => {
         //232 is the height of all elements above image. Can be changed later.
         let offsetY = (((e.pageY - 232) / e.target.offsetHeight) * 100).toFixed(2);
 
-    
+        console.log(offsetX, offsetY)
+
         setPopUpStyle({
             position: 'absolute',
             left: `${e.clientX - 20}px`,
-            top: `${e.clientY - 10}px`,
-            color: 'red'
+            top: `${e.clientY - 30}px`,
+            backgroundColor: 'cyan',
+            width: '2rem',
+            height: '3rem',
+            border: '2px solid cyan'
         });
-        setIsClicked(true);
+        //setIsClicked(true);
 
-        //let chosenCharacter = prompt('Who?');
-        //checkIfCharacter(offsetX, offsetY, chosenCharacter);
-
-        //setIsClicked(false);
+        let chosenCharacter = prompt('Who?');
+        checkIfCharacter(offsetX, offsetY, chosenCharacter);
 
         const chewyCoords = [[80.45, 82.99], [77.55, 82.64]]
         const bb8Coords = [[36.87, 39.34], [80.08, 83.36]]
+        const bobaCoords = [[88.70, 91.20], [81.68, 85.10]]
     };
 
 
@@ -66,14 +69,16 @@ const GameImage = (props) => {
         if((xToNumber >= xcoords.xcoord1 && xToNumber <= xcoords.xcoord2) && (yToNumber >= ycoords.ycoord1 && yToNumber <= ycoords.ycoord2)) {
             alert(`Found ${characterName}!`)
             props.darkenCharacter(characterName);
+            setIsClicked(false);
         } else {
             alert('Nope!')
+            setIsClicked(false);
         };
         
     }
 
     return((
-        <div>
+        <div id='gameContainer'>
             <div id='gamePhotoContainer'>  
                 <img src={gamePhoto} id='gamePhoto' onClick={handleImageClick}></img>
                 {isClicked ? <PopUp style={popUpStyle}/> : null}

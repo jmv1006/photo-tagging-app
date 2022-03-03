@@ -1,3 +1,11 @@
+#gameContainer {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #gamePhotoContainer {
     width: 98%;
     height: auto;
