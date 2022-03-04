@@ -17,7 +17,7 @@ There are some of the most important things I learned in this project:
 Hands down, the most significant thing I learned when it came to this project was structuring my backend. At first, I jumped right into the deep-end and tried to take the "figure it out as I code" route, but I SOON realized that I was just making things more difficult for myself. I learned the importance of taking the time to actually PLAN OUT how my backend would be structured. By doing so, I was able to structure it in a way where my frontend could communicate with it seamlessly. 
 
 ### Working With Multiple Technologies Is Not Easy
-It took a lot of trial and error in order for me to get all of my technologies to work together. Whether it was setting up Firebase Hosting or learning how to fetch data from the Firestore database and import it into my JS code, getting all the technologies used to work together seamlessly took time. The experience definitely reinforced an idea that I have held onto sinced I began programming, that patience is the KEY to everything!!
+It took a lot of trial and error in order for me to get all of my technologies to work together. Whether it was setting up Firebase Hosting or learning how to fetch data from the Firestore database and import it into my JS code, getting all the technologies used to work together seamlessly took time. The experience definitely reinforced an idea that I have held onto sinced I began programming, that patience is the KEY to everything!
 
 ## Available Scripts
 
