@@ -1,6 +1,23 @@
-# Getting Started with Create React App
+# Where's Waldo: On Tatooine!
+This is my first major project in which I combine my frontend with a backend! In this case, I utilized Cloud Firestore from Firebase.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this app, you are a new recruit to The Resistance, where you are called upon to help find some old friends on the desert planet of Tatooine! 
+
+## Technologies Utilized
+
+### React
+### React Router
+### Google Firestore
+### Google Firebase Hosting
+
+## Key Concepts Learned
+There are some of the most important things I learned in this project:
+
+### Working With A Backend
+Hands down, the most significant thing I learned when it came to this project was structuring my backend. At first, I jumped right into the deep-end and tried to take the "figure it out as I code" route, but I SOON realized that I was just making things more difficult for myself. I learned the importance of taking the time to actually PLAN OUT how my backend would be structured. By doing so, I was able to structure it in a way where my frontend could communicate with it seamlessly. 
+
+### Working With Multiple Technologies Is Not Easy
+It took a lot of trial and error in order for me to get all of my technologies to work together. Whether it was setting up Firebase Hosting or learning how to fetch data from the Firestore database and import it into my JS code, getting all the technologies used to work together seamlessly took time. The experience definitely reinforced an idea that I have held onto sinced I began programming, that patience is the KEY to everything!!
 
 ## Available Scripts
 
@@ -41,30 +58,6 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
