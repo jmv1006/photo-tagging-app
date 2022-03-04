@@ -1,6 +1,4 @@
-import { useEffect, useState } from 'react';
-import './gameimage.css'
-import charactersArray from '../characters';
+import './popup.css'
 
 const PopUp = (props) => {
     
@@ -11,7 +9,7 @@ const PopUp = (props) => {
     const availableCharacters = props.characters.filter(character => character.isFound === false);
 
     const characterOptionsToDisplay = availableCharacters.map((character) => 
-        <button key={character.name} onClick={() => sendChosenCharacter(character.name)}>{character.name}</button>
+        <button className='characterChoiceButton' key={character.name} onClick={() => sendChosenCharacter(character.name)}>{character.name}</button>
     );
 
     return(

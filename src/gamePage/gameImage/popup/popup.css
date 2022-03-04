@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+#characterChoiceButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+}
+
+.characterChoiceButton {
+    width: 6rem;
+    height: 1.75rem;
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+    background-color: black;
+    color: cyan;
+}
+
+.characterChoiceButton:hover {
+    width: 6.1rem;
+    height: 1.65rem;
+    cursor: pointer;
+    font-family: 'Rubik', sans-serif;
+    background-color: black;
+    color: cyan;
+}

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import gamePhoto from '../imgs/starwarswaldo.jpeg';
 import { getCharacters, db } from '../../firebase'
 import './gameimage.css'
-import PopUp from './popup';
+import PopUp from './popup/popup';
 
 const GameImage = (props) => {
 
@@ -38,7 +38,6 @@ const GameImage = (props) => {
         let offsetX = ((e.pageX / e.target.offsetWidth) * 100).toFixed(2);
         //324px is the height of all elements above image. Can be changed later.
         let offsetY = (((e.pageY - 324) / e.target.offsetHeight) * 100).toFixed(2);
-        console.log(offsetX, offsetY);
 
         setPopUpStyle({
             position: 'absolute',
@@ -46,8 +45,8 @@ const GameImage = (props) => {
             top: `${e.pageY}px`,
             width: 'auto',
             height: 'auto',
-            backgroundColor: 'white',
-            display: 'flex'
+            display: 'flex',
+            border: '1px solid cyan',
         });
         setIsClicked(true);
         
@@ -67,21 +66,20 @@ const GameImage = (props) => {
         const xToNumber = Number(x);
         const yToNumber = Number(y);
 
-        console.log(characterName);
         let characterIndex = characters.findIndex((character) => character.name === characterName);
         let xcoords = characters[characterIndex].coordinates[0];
         let ycoords = characters[characterIndex].coordinates[1];
 
         if((xToNumber >= xcoords.xcoord1 && xToNumber <= xcoords.xcoord2) && (yToNumber >= ycoords.ycoord1 && yToNumber <= ycoords.ycoord2)) {
             props.darkenCharacter(characterName);
-            props.setFeedback(`You found ${characterName}!`);
+            props.setFeedback(`YOU FOUND ${characterName.toUpperCase()}!`);
             
             let tempArr = characters;
             tempArr[characterIndex].isFound = true
             setCharacters(tempArr);
             setIsClicked(false);
         } else {
-            props.setFeedback('No one there!');
+            props.setFeedback('NO ONE THERE!');
             setIsClicked(false);
         };
         

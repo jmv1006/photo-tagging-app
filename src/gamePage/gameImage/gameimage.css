@@ -17,8 +17,3 @@
     height: auto;
     cursor: url('../imgs/cursor.png') 30 25, auto;
 }
-
-#characterChoiceButtonsContainer {
-    display: flex;
-    flex-direction: column;
-}
