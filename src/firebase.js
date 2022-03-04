@@ -43,4 +43,25 @@ async function getCharacters(db) {
   return characterInfo;
 }
 
-export { getCharacters, db };
+async function getScores(db) {
+  const leaderboardCollection = collection(db, 'leaderboard');
+  const leaderboardDocs = await getDocs(leaderboardCollection);
+  const scores = leaderboardDocs.docs.map(score => score.data());
+  return scores;
+}
+
+async function addScoreToDB(userScore) {
+
+  console.log(userScore);
+  
+  await setDoc(doc(db, 'leaderboard', `${userScore.name}`), {
+    name: userScore.name,
+    score: {
+      minutes: userScore.score.minutes,
+      seconds: userScore.score.seconds
+    }
+  });
+
+}
+
+export { getCharacters, getScores, addScoreToDB, db };

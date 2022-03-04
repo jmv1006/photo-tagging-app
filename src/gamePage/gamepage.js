@@ -36,6 +36,10 @@ const GamePage = () => {
         setFinalScore(score);
     }   
 
+    const skipToGameOver = () => {
+        setGameOver(true);
+    }
+
     return(
         <div id='mainPageContainer'>
             {gameOver ? 
@@ -49,6 +53,7 @@ const GamePage = () => {
                 </div>
                 <FeedbackBar  saveScore={setScore} feedback={feedback}/>
                 <GameImage gameIsOver={foundAllCharacters} setFeedback={changeFeedback} darkenCharacter={darkenCharacter}/>
+                <button onClick={skipToGameOver}>Skip to over</button>
             </div>
             }
             
