@@ -1,11 +1,17 @@
 import './gamepage.css'
 import charactersArray from './characters';
 import GameImage from './gameImage/gameImage';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import FeedbackBar from './feedbackBar/feedbackBar';
+import GameOver from '../gameover/gameover';
 
 const GamePage = () => {
     const [feedback, setFeedback] = useState('Find Someone!');
+    const [gameOver, setGameOver] = useState(false);
+    const [finalScore, setFinalScore] = useState('');
+
+    useEffect(() => {
+    }, [gameOver])
 
     const characters = charactersArray.map((character) => 
         <div className='characterPhotoContainer' key={character.number}>
@@ -22,14 +28,30 @@ const GamePage = () => {
         setFeedback(feedback)
     };
 
+    const foundAllCharacters = () => {
+        setGameOver(true);
+    }
+
+    const setScore = (score) => {
+        setFinalScore(score);
+    }   
+
     return(
-        <div id='gamePageContainer'>
-            Writing
-            <div id='charactersContainer'>
+        <div id='mainPageContainer'>
+            {gameOver ? 
+            
+            <GameOver finalScore={finalScore}/>
+            
+            :
+            <div id='gamePageContainer'>
+                <div id='charactersContainer'>
                 {characters}
+                </div>
+                <FeedbackBar  saveScore={setScore} feedback={feedback}/>
+                <GameImage gameIsOver={foundAllCharacters} setFeedback={changeFeedback} darkenCharacter={darkenCharacter}/>
             </div>
-            <FeedbackBar feedback={feedback}/>
-            <GameImage setFeedback={changeFeedback} darkenCharacter={darkenCharacter}/>
+            }
+            
         </div>
     )
 }

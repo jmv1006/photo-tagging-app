@@ -33,11 +33,19 @@ const GameImage = (props) => {
 
     }, []);
 
+    useEffect(() => {
+
+        const isCharacterFound = (character) => character.isFound === true;
+        if(characters.length > 0 && characters.every(isCharacterFound)) {
+            props.gameIsOver();
+        };
+
+    }, [characters])
 
     const handleImageClick = (e) => {
         let offsetX = ((e.pageX / e.target.offsetWidth) * 100).toFixed(2);
-        //324px is the height of all elements above image. Can be changed later.
-        let offsetY = (((e.pageY - 324) / e.target.offsetHeight) * 100).toFixed(2);
+        //293px is the height of all elements above image. Can be changed later.
+        let offsetY = (((e.pageY - 293) / e.target.offsetHeight) * 100).toFixed(2);
 
         setPopUpStyle({
             position: 'absolute',
@@ -52,10 +60,6 @@ const GameImage = (props) => {
         
         setxPos(offsetX);
         setyPos(offsetY);
-
-        const chewyCoords = [[80.45, 82.99], [77.55, 82.64]]
-        const bb8Coords = [[36.87, 39.34], [80.08, 83.36]]
-        const bobaCoords = [[88.70, 91.20], [81.68, 85.10]]
     };
 
     const handleCharacterChoice = (chosenCharacter) => {
@@ -74,7 +78,7 @@ const GameImage = (props) => {
             props.darkenCharacter(characterName);
             props.setFeedback(`YOU FOUND ${characterName.toUpperCase()}!`);
             
-            let tempArr = characters;
+            let tempArr = [...characters];
             tempArr[characterIndex].isFound = true
             setCharacters(tempArr);
             setIsClicked(false);

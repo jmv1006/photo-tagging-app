@@ -6,6 +6,14 @@ const FeedbackBar = (props) => {
     const [minutes, setMinutes] = useState(0);
     const [seconds, setSeconds] = useState(0);
     const [isActive, setIsActive] = useState(false);
+    const [currentScore, setCurrentScore] = useState({
+        minutes: 0,
+        seconds: 0
+    });
+
+    useEffect(() => {
+        setIsActive(true);
+    }, [])
 
     useEffect(() => {
         let interval = null;
@@ -20,7 +28,12 @@ const FeedbackBar = (props) => {
                 setMinutes(minutes => minutes + 1);
                 setSeconds(seconds => 0)
             };
-    
+            
+            setCurrentScore({
+                minutes: minutes,
+                seconds: seconds
+            });
+
             return () => clearInterval(interval);
         } else {
             //stop
@@ -28,9 +41,9 @@ const FeedbackBar = (props) => {
         
     }, [seconds, isActive]);
 
-    const setActive = () => {
-        setIsActive(true);
-    };
+    useEffect(() => {
+        props.saveScore(currentScore);
+    }, [currentScore])
 
     return(
         <div id="feedbackContainer">
@@ -40,7 +53,6 @@ const FeedbackBar = (props) => {
             <div id='timer'>
                 {seconds < 10 ? `0${minutes}:0${seconds}` : `0${minutes}:${seconds}` } 
             </div>
-            <button onClick={setActive}>Start</button>
         </div>
     )
 }
