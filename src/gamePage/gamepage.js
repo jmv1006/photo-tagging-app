@@ -5,7 +5,7 @@ import { useState } from 'react';
 import FeedbackBar from './feedbackBar/feedbackBar';
 
 const GamePage = () => {
-    const [feedback, setFeedback] = useState('Choose Someone!');
+    const [feedback, setFeedback] = useState('Find Someone!');
 
     const characters = charactersArray.map((character) => 
         <div className='characterPhotoContainer' key={character.number}>
