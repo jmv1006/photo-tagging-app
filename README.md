@@ -3,7 +3,7 @@ This is my first major project in which I combine my frontend with a backend! In
 
 In this app, you are a new recruit to The Resistance, where you are called upon to help find some old friends on the desert planet of Tatooine! 
 
-The finished app can be accessed [here](https://photo-tagging-game-9444f.web.app/)
+The finished app can be accessed [here](https://photo-tagging-game-9444f.web.app/).
 
 ## Technologies Utilized
 

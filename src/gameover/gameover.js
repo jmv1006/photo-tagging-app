@@ -64,7 +64,7 @@ const GameOver = (props) => {
     return(
         <div id="gameOverContainer">
             <div id='finalScoreDisplay'>
-                Congratulations! Your final score is {props.finalScore.minutes} minutes and {props.finalScore.seconds} seconds!
+                CONGRATULATIONS RECRUIT! YOUR FINAL SCORE IS {props.finalScore.minutes} MINUTE(S) AND {props.finalScore.seconds} SECONDS!
             </div>
 
             {inputtedName ? 
@@ -77,8 +77,8 @@ const GameOver = (props) => {
                     Input your name below to save your score!
                     <form onSubmit={submitScore} id='scoreInputForm'>
                         <label htmlFor='name'>Name</label>
-                        <input type='text' name="name" placeholder='Name' onChange={handleChange} value={name}></input>
-                        <button type='submit'>Submit</button>
+                        <input type='text' name="name" onChange={handleChange} value={name}></input>
+                        <button id='submitScoreButton' type='submit'>Submit</button>
                     </form>
                 </div>
             }
