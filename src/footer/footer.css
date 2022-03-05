@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+#footerContainer {
+    color: white;
+    width: 100%;
+    height: 4.25rem;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    gap: .5rem;
+}
+
+#myInfo {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+#gitLogoContainer {
+    width: 1.4rem;
+    height: auto;
+    cursor: pointer;
+    background-color: white;
+}
+
+#imageInfo {
+    color: white;
+    text-align: center;
+}
+
+a {
+    color: white;
+    font-style: italic;
+}

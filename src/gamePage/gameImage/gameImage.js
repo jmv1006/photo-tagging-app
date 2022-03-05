@@ -16,10 +16,10 @@ const GameImage = (props) => {
         getCharacters(db).then((value) => processData(value));
 
         function processData(data) {
-            data.map(doStuff)
+            data.map(createCharacterObjects)
         };
 
-        function doStuff(data) {
+        function createCharacterObjects(data) {
             let newCharacterObj = {
                 name: data.charactername,
                 coordinates: data.coordinates,
@@ -44,8 +44,8 @@ const GameImage = (props) => {
 
     const handleImageClick = (e) => {
         let offsetX = ((e.pageX / e.target.offsetWidth) * 100).toFixed(2);
-        //293px is the height of all elements above image. Can be changed later.
-        let offsetY = (((e.pageY - 293) / e.target.offsetHeight) * 100).toFixed(2);
+        //310px is the height of all elements above image. Can be changed later.
+        let offsetY = (((e.pageY - 310) / e.target.offsetHeight) * 100).toFixed(2);
 
         setPopUpStyle({
             position: 'absolute',
